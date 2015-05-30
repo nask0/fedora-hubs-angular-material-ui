@@ -43,7 +43,7 @@ If you have questions, suggestions or ideas that you think should go into the do
 ## How i can help
 ---
 * With concept ideas, UX/UI, mockups 
-* JavaScript (AngularJs, material design, etc.)
+* JavaScript - AngularJs (i already have built some really awesome projects with it), Angular-Material, etc.
 * Can write everything for web in PHP ( not wide used within Fedora websites community as long i can see :) ). Good knowledge of [Zephir](zephir-lang.com), [Phalcon](http://phalconphp.com/),   [ZeroMQ](http://zeromq.org/)
 * Learning Python recently
 
