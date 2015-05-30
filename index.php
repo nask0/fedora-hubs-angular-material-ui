@@ -31,7 +31,7 @@ fclose($file);
 <!DOCTYPE html>
 <html lang="en" ng-app="fedoraHubs" >
     <head>
-        <base href="<?php echo $baseUrl; ?>/">
+        <!--<base href="/">-->
 
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,7 +89,7 @@ fclose($file);
                     <img src="<?php echo $baseUrl; ?>/img/fedora_infinity_48x48.png" />
                 </div>
                 <div flex="10">
-                    <md-button href="/">
+                    <md-button ui-sref="/">
                         <h1>Hubs</h1>
                     </md-button>
                 </div>
@@ -98,7 +98,7 @@ fclose($file);
                 <div flex></div>
 
                 <div>
-                    <md-button href="home">
+                    <md-button href="home" ui-sref="home">
                         Void
                     </md-button>
                 </div>

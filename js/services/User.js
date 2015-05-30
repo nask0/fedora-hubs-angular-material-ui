@@ -3,8 +3,8 @@
  * Main Auth Service
  */
 angular.module('fedoraHubs')
-.factory('userService', [ '$http', '$q', '$window', 'fasAuthService', 'githubAuthService', 'facebookAuthService', 'hubsLog',
-    function( $http, $q, $window, fasAuthService, githubAuthService, facebookAuthService, hubsLog ) {
+.factory('userService', [ '$http', '$q', '$window', 'fasAuthService', 'githubAuthService', 'facebookAuthSerivce', 'hubsLog',
+    function( $http, $q, $window, fasAuthService, githubAuthService, facebookAuthSerivce, hubsLog ) {
         var userService = {};
 
         /**

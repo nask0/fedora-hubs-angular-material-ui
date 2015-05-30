@@ -1,4 +1,13 @@
 AddDefaultCharset UTF-8
+
+<IfModule mod_php5.c>
+    php_value magic_quotes_gpc 0
+    php_value register_globals 0
+    php_value short_open_tag 0
+    php_value post_max_size 120M
+    php_value upload_max_filesize 110M
+</IfModule>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
@@ -7,12 +16,11 @@ AddDefaultCharset UTF-8
     # RewriteCond %{HTTP_HOST} ^www.fedora-hubs.dev
     # RewriteRule (.*) http://fedora-hubs.dev.dev/$1 [R=301,L]
 
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} !\.(?:jpe?g|gif|bmp|png|tiff|css|js)$ [NC]
-    RewriteRule (.*) index.php/$1 [L]
+    # --
+    RewriteCond %{REQUEST_FILENAME} -s [OR]
+    RewriteCond %{REQUEST_FILENAME} -l [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^.*$ - [NC,L]
 
-    #RewriteCond %{REQUEST_FILENAME} !-d
-    #RewriteCond %{REQUEST_FILENAME} !-f
-    #RewriteRule ^(.*)$ index.php [QSA,L]
+    RewriteRule ^(.*) /index.php [NC,L]
 </IfModule>

@@ -6,6 +6,6 @@
 angular.module('fedoraHubs')
 .factory('githubAuthService', [ '$http', '$q',
     function( $http, $q ) {
-
+        return {};
     }
 ]);

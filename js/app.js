@@ -33,8 +33,6 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
          * --
          * @see https://github.com/angular-ui/ui-router/wiki
          */
-        console.log(window.appConfig.baseUrl + '/templates/home/home.html');
-
         $stateProvider
             // default (home)
             .state('/', {
@@ -51,7 +49,7 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
 
         $urlRouterProvider.otherwise('/');
 
-        $locationProvider.html5Mode(true);
+        // $locationProvider.html5Mode(true);
 
         /**
          * Configure theme color palletes
@@ -71,19 +69,32 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
  * It is executed after all of the services have been configured and the injector has been created. 
  * Run blocks typically contain code which is hard to unit-test,  and for this reason should be declared in isolated modules, so that they can be ignored in the unit-tests.
  */
-.run(['$rootScope', '$location', 'hubsLog',
-    function($rootScope, $location, hubsLog) {
+.run(['$rootScope', '$location', '$log', 'userService',
+    function($rootScope, $location, $log, userService) {
+        // load session user fake data
+        $rootScope.currentUser = {};
+        userService.getFakeData().then(
+            function( data ) {
+                $rootScope.currentUser = data;
+                $log.log($rootScope.currentUser);
+            },
+            function(err) {
+                $log.warn('Cannot load user fake data !');
+                $log.log(err);
+            }
+        );
+
         $rootScope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams){
-                hubsLog(['event: $stateChangeStart', 'To State', toState, 'To Params', toParams, 'From state',fromState, 'From Params',fromParams]);
+                $log.log(['event: $stateChangeStart', 'To State', toState, 'To Params', toParams, 'From state',fromState, 'From Params',fromParams]);
             });
 
         $rootScope.$on('$routeChangeSuccess', function() {
-            hubsLog(['event: $routeChangeSuccess']);
+            $log.log(['event: $routeChangeSuccess']);
         });
 
         $rootScope.$on('$routeChangeError', function() {
-            hubsLog( ['event: $routeChangeError !!!'] );
+            $log.log( ['event: $routeChangeError !!!'] );
         });
     }
 ]);
