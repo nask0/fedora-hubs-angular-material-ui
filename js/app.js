@@ -46,4 +46,9 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
             return '';
         };
     }
-]);
+])
+.controller('appCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
+    $scope.toggleSidenav = function(menuId) {
+        $mdSidenav(menuId).toggle();
+    };
+}]);

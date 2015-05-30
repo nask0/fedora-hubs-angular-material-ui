@@ -3,7 +3,7 @@
 $baseUrl = 'http://fedora-hubs.dev';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="fedoraHubs" >
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,7 +41,21 @@ $baseUrl = 'http://fedora-hubs.dev';
         </script>
     </head>
 
-    <body ng-app="fedoraHubs" style="font-family: 'Roboto';">
+    <body layout="column" ng-controller="appCtrl" style="font-family: 'Comfortaa';">
 
+        <!-- toolbar definition : @todo move it to separate template later -->
+        <md-toolbar layout="row">
+            <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Hello Hubs !</h1>
+        </md-toolbar>
+
+        <div layout="row" flex>
+            <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+            </md-sidenav>
+            <div layout="column" flex id="content">
+                <md-content layout="column" flex class="md-padding">
+
+                </md-content>
+            </div>
+        </div>
     </body>
 </html>
