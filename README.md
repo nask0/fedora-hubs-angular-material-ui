@@ -17,6 +17,29 @@ If you have questions, suggestions or ideas that you think should go into the do
 
 ## Ideas / Todo's / Concepts
 ---
+
+#### Think about adopting modern web technologies like AngularJS and Material Design:
+
+- Everyone is exited about AngularJS; it is and will continue to be "web.next" framework 
+>"First represents our commitment to innovation."
+
+- Angular have pretty good documentation, growing friendly community
+
+- Angular have "native" intregation with Material: https://material.angularjs.org/
+
+- Speed up development cycle and effort of implementing new features
+
+- Separate data representation from data sources
+
+- Unified and trivial way for creating new features or upgrading (expanding) existing ones.
+
+- Improve maintainability of code and features
+
+- Easy, unified and constinent UI for all web projects, responsive design, good mobile experience
+
+* Note: AngularJS has nothing to do with jQuery, they have completely different purposes
+
+
 #### Secure web client -> server conection
 ##### Implement secure connection between trusted HTTP client (for example frontend part of of web application or other third-party client's and web service like FAS, Badges, etc. : 
 
@@ -51,3 +74,10 @@ If you have questions, suggestions or ideas that you think should go into the do
 ---
 Taking into account the fact that i am not completely familiar with whole current  infrastructure of web projects, do not hesitate to contact me for further discussions, suggestions, advices and support.   
 I already have implemented above "secured connection" scenario on Angular and currently working on some mockups / UI in order to describe / illustrate better the idea. I will add mockups in this repo.
+
+## Useful readings
+https://material.angularjs.org/latest/
+https://github.com/angular-ui/ui-router/wiki
+https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties
+https://www.linkedin.com/pulse/material-design-intro-coding-guidelines-sergio-villasenor
+https://blog.cesarandreu.com/posts/handling_user_states_in_angularjs

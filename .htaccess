@@ -1,0 +1,18 @@
+AddDefaultCharset UTF-8
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteBase /
+
+    # RewriteCond %{HTTP_HOST} ^www.fedora-hubs.dev
+    # RewriteRule (.*) http://fedora-hubs.dev.dev/$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !\.(?:jpe?g|gif|bmp|png|tiff|css|js)$ [NC]
+    RewriteRule (.*) index.php/$1 [L]
+
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteCond %{REQUEST_FILENAME} !-f
+    #RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

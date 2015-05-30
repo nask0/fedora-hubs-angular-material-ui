@@ -31,13 +31,15 @@ fclose($file);
 <!DOCTYPE html>
 <html lang="en" ng-app="fedoraHubs" >
     <head>
+        <base href="<?php echo $baseUrl; ?>/">
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta name="description" content="Fedora Hubs on AngularJS / Material design">
 
         <link rel="shortcut icon" href="img/favicon.ico">
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.0/angular-material.min.css">
+        <link rel="stylesheet" href="<?php $baseUrl; ?>/css/vendor/angular-material.css">
 
         <!-- Loading local styles -->
         <link rel="stylesheet" href="css/styles.css">
@@ -76,24 +78,44 @@ fclose($file);
         </script>
     </head>
 
-    <body layout="column" ng-controller="HomeController" style="font-family: 'Comfortaa';">
+    <body layout="column" style="font-family: 'Comfortaa';">
 
         <md-toolbar layout="row">
-            <h1 class="md-toolbar-tools" layout-align-gt-sm="left">Hello Hubs !</h1>
-        </md-toolbar>
+            <div class="md-toolbar-tools">
 
-        <div layout="row" flex>
-            <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-                Sidenav goes here
-            </md-sidenav>
+                <!-- I'am pretty sure that can be done better, but i am not CSS master -->
 
-            <div layout="column" flex id="content">
+                <div flex="5" id="logo" >
+                    <img src="<?php echo $baseUrl; ?>/img/fedora_infinity_48x48.png" />
+                </div>
+                <div flex="10">
+                    <md-button href="/">
+                        <h1>Hubs</h1>
+                    </md-button>
+                </div>
 
-                <md-content ui-view layout="column" flex class="md-padding">
-                    Content goes here
-                </md-content>
+                <!-- fill up the space between left and right area -->
+                <div flex></div>
+
+                <div>
+                    <md-button href="home">
+                        Void
+                    </md-button>
+                </div>
 
             </div>
+        </md-toolbar>
+
+
+        <div layout="row" flex>
+            <md-sidenav layout="column" class="md-sidenav-left fixed md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+                Sidenav
+            </md-sidenav>
+
+
+
+            <div ui-view></div>
+
         </div>
     </body>
 </html>
