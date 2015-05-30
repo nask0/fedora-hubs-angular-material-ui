@@ -1,0 +1,1 @@
+* Create Fedora color theme. Currently default theme is "blue" 
