@@ -12,6 +12,6 @@ angular.module('fedoraHubs')
         fasAuth.csrfToken= function () {}
         fasAuth.checkStatus = function () {}
 
-        return fbService;
+        return fasAuth;
     }
 ]);

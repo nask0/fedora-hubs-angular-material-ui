@@ -16,6 +16,7 @@ $user = [
             'img' => $baseUrl.'/data/static/fas-crypto-badger.png'
         )
     ),
+    'slogan' => 'A goal without a plan is only a wish.',
     'isAdmin' => false,
     'fasLogged' => false,
     'hasCla' => false,
@@ -45,16 +46,27 @@ fclose($file);
 
         <link href='http://fonts.googleapis.com/css?family=Comfortaa:400,700' rel='stylesheet' type='text/css'>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-
+        <script src="<?php echo $baseUrl; ?>/js/libs/vendor/angular.min.js"></script>
         <script src="<?php echo $baseUrl; ?>/js/libs/vendor/angular-ui-router.js"></script>
+        <script src="<?php echo $baseUrl; ?>/js/libs/vendor/angular-animate.min.js"></script>
+        <script src="<?php echo $baseUrl; ?>/js/libs/vendor/angular-aria.min.js"></script>
+
         <script src="<?php echo $baseUrl; ?>/js/libs/vendor/angular-material.js"></script>
         <script src="<?php echo $baseUrl; ?>/js/libs/vendor/underscore-min.js"></script>
 
+        <script src="<?php echo $baseUrl; ?>/js/libs/vendor/forge/sha256.js"></script>
+        <script src="<?php echo $baseUrl; ?>/js/libs/vendor/forge/hmac.js"></script>
+
         <!-- Load app-specific files -->
         <script src="<?php echo $baseUrl; ?>/js/app.js"></script>
+        <script src="<?php echo $baseUrl; ?>/js/services/Log.js"></script>
+        <script src="<?php echo $baseUrl; ?>/js/services/Auth/FAS.js"></script>
+        <script src="<?php echo $baseUrl; ?>/js/services/Auth/GitHub.js"></script>
+        <script src="<?php echo $baseUrl; ?>/js/services/Auth/Facebook.js"></script>
+        <script src="<?php echo $baseUrl; ?>/js/services/User.js"></script>
+
+        <script src="<?php echo $baseUrl; ?>/js/controllers/home.js"></script>
+
 
         <script type="text/javascript">
             // put specific app (non-sensitive!) configurations here
@@ -64,18 +76,21 @@ fclose($file);
         </script>
     </head>
 
-    <body layout="column" ng-controller="appCtrl" style="font-family: 'Comfortaa';">
+    <body layout="column" ng-controller="HomeController" style="font-family: 'Comfortaa';">
+
         <md-toolbar layout="row">
-            <h1 class="md-toolbar-tools" layout-align-gt-sm="center">Hello Hubs !</h1>
+            <h1 class="md-toolbar-tools" layout-align-gt-sm="left">Hello Hubs !</h1>
         </md-toolbar>
 
         <div layout="row" flex>
             <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+                Sidenav goes here
             </md-sidenav>
+
             <div layout="column" flex id="content">
 
-                <md-content layout="column" flex class="md-padding">
-
+                <md-content ui-view layout="column" flex class="md-padding">
+                    Content goes here
                 </md-content>
 
             </div>

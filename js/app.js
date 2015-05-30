@@ -20,8 +20,8 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
  * Only providers and constants can be injected into configuration blocks. 
  * This is to prevent accidental instantiation of services before they have been fully configured.
  */
-.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider', 'UserService',
-    function( $stateProvider, $urlProvider, $mdThemingProvider, UserService ) {
+.config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider',
+    function( $stateProvider, $urlRouterProvider, $mdThemingProvider ) {
         // configure app routes
 
         /**
@@ -32,8 +32,6 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
          * A state describes (via the controller / template / view properties) what the UI looks like and does at that place.
          * States often have things in common, and the primary way of factoring out these commonalities in this model is
          * via the state hierarchy, i.e. parent/child states aka nested states.
-         *
-         * @type {{auth: *[]}}
          */
 
         /**
@@ -41,8 +39,8 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
          *  - Auth service method that check user session status periodically
          */
         var resolvers = {
-            auth : ['$rootScope', 'UserService', function($rootScope, UserService) {
-                return UserService.updateLoginStatus();
+            auth : ['$rootScope', function($rootScope) {
+                // return userService.updateLoginStatus();
             }]
         };
 
@@ -61,20 +59,15 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
  * It is executed after all of the services have been configured and the injector has been created. 
  * Run blocks typically contain code which is hard to unit-test,  and for this reason should be declared in isolated modules, so that they can be ignored in the unit-tests.
  */
-.run(['$rootScope', '$route', 'hubsLog',
-    function($rootScope, $route, hubsLog) {
+.run(['$rootScope', 'hubsLog',
+    function($rootScope, hubsLog) {
 
         $rootScope.$on('$routeChangeSuccess', function() {
-            hubsLog($route.current ? ['event: $routeChangeSuccess', $route.current]: null);
+            hubsLog(['event: $routeChangeSuccess']);
         });
 
         $rootScope.$on('$routeChangeError', function() {
-            hubsLog($route.current ? ['event: $routeChangeError', $route.current]: null);
+            hubsLog( ['event: $routeChangeError', $route.current] );
         });
-    }
-])
-.controller('appCtrl', ['$scope', '$mdSidenav',
-    function($scope, $mdSidenav) {
-
     }
 ]);

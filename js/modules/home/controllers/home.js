@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('fedoraHubs')
-.controller('Home', ['$scope', '$rootScope', '$timeout',
-    function($scope, $rootScope, $timeout) {
-        // ~ your controller here
+.controller('Home', ['$scope', '$rootScope',
+    function($scope, $rootScope) {
+        // ~ home controller here
     }
 ]);
