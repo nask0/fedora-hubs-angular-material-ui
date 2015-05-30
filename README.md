@@ -8,7 +8,7 @@ If you have questions, suggestions or ideas that you think should go into the do
 * Merge of some of the existent web projects (i have in mind : Fedora Badges, FAS, Fedora apps [https://apps.fedoraproject.org/] , Fedora Wiki, Fedora Documentation [others ?]) into modern, stylish, useful and user friendly web portal for Fedora community .
 * Build of unified interface for all web projects, that is easy to use from administrators, contributors and users
 * Facilitation of process of contributing to Fedora Project (not only for one project)
-* Adopt modern web technologies like [AngularJS](https://angularjs.org/) and [Material](http://www.google.com/design/spec/). This will :
+* Adopt modern web technologies like [AngularJS](https://angularjs.org/) and [Material](http://www.google.com/design/spec/) (Angular have pretty good intregation with Material: https://material.angularjs.org/).  This will :
  - Speed up development cycle and effort of implementing new features
  - Separate data representation from data sources
  - Unified and trival way for creating future or upgrading (expanding) existing web projects
@@ -43,7 +43,7 @@ If you have questions, suggestions or ideas that you think should go into the do
 ## How i can help
 ---
 * With concept ideas, UX/UI, mockups 
-* JavaScript (AngularJs, material design, etc.)
+* JavaScript - AngularJs (i already have built some really awesome projects with it), Angular-Material, etc.
 * Can write everything for web in PHP ( not wide used within Fedora websites community as long i can see :) ). Good knowledge of [Zephir](zephir-lang.com), [Phalcon](http://phalconphp.com/),   [ZeroMQ](http://zeromq.org/)
 * Learning Python recently
 
