@@ -83,13 +83,15 @@ Taking into account the fact that i am not completely familiar with whole curren
 I already have implemented above "secured connection" scenario on Angular and currently working on some mockups / UI in order to describe / illustrate better the idea. I will add mockups in this repo.
 
 ## Useful resources
+Conceptual introduction to AngularJS : http://paislee.io/a-conceptual-introduction-to-angularjs/
 Quick start with AngularJS: https://thinkster.io/a-better-way-to-learn-angularjs/
-http://www.nganimate.org/ - basic animations
-https://angular-ui.github.io/
-https://material.angularjs.org/latest/
-https://github.com/angular-ui/ui-router/wiki
-https://scotch.io/quick-tips/pretty-urls-in-angularjs-removing-the-hashtag
-https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties
+Angular UI router: https://github.com/angular-ui/ui-router/wiki
+Angular basic animations: http://www.nganimate.org/
+AngularUI git : https://angular-ui.github.io/
+AngularJS SEO tips: https://scotch.io/tutorials/angularjs-seo-with-prerender-io?_escaped_fragment_=tag#caveats
+Material Design docs : https://material.angularjs.org/latest/
+
+Flexbox css3 properties: https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties
 https://www.linkedin.com/pulse/material-design-intro-coding-guidelines-sergio-villasenor
 https://blog.cesarandreu.com/posts/handling_user_states_in_angularjs
 http://www.bossable.com/1338/angular-material-design-toolbar-examples/
