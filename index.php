@@ -31,8 +31,6 @@ fclose($file);
 <!DOCTYPE html>
 <html lang="en" ng-app="fedoraHubs" >
     <head>
-        <!--<base href="/">-->
-
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -80,42 +78,15 @@ fclose($file);
 
     <body layout="column" style="font-family: 'Comfortaa';">
 
-        <md-toolbar layout="row">
-            <div class="md-toolbar-tools">
-
-                <!-- I'am pretty sure that can be done better, but i am not CSS master -->
-
-                <div flex="5" id="logo" >
-                    <img src="<?php echo $baseUrl; ?>/img/fedora_infinity_48x48.png" />
-                </div>
-                <div flex="10">
-                    <md-button ui-sref="/">
-                        <h1>Hubs</h1>
-                    </md-button>
-                </div>
-
-                <!-- fill up the space between left and right area -->
-                <div flex></div>
-
-                <div>
-                    <md-button href="home" ui-sref="home">
-                        Void
-                    </md-button>
-                </div>
-
-            </div>
-        </md-toolbar>
-
+        <div ui-view="navigation"></div>
 
         <div layout="row" flex>
             <md-sidenav layout="column" class="md-sidenav-left fixed md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-                Sidenav
+                <div ui-view="sidenav"></div>
             </md-sidenav>
 
 
-
-            <div ui-view></div>
-
+            <div ui-view="content"></div>
         </div>
     </body>
 </html>

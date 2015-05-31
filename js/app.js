@@ -34,22 +34,43 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
          * @see https://github.com/angular-ui/ui-router/wiki
          */
         $stateProvider
-            // default (home)
-            .state('/', {
+            // This will get automatically plugged into the unnamed ui-view
+            // of the parent state template. Since this is a top level state,
+            // its parent state template is index
+            .state('index', {
                 url: "/",
-                controller: 'HomeController',
-                templateUrl: window.appConfig.baseUrl + '/templates/home/home.html'
+                views: {
+                    'navigation': {
+                        controller: 'HomeController',
+                        templateUrl: window.appConfig.baseUrl + '/templates/partials/navigation.html'
+                    },
+                    'sidenav': {
+                        controller: 'HomeController',
+                        templateUrl: window.appConfig.baseUrl + '/templates/partials/sidenav.html'
+                    },
+                    'content': {
+                        controller: 'HomeController',
+                        templateUrl: window.appConfig.baseUrl + '/templates/home/home.html'
+                    }
+                }
             })
             // home
-            .state('home', {
-                url: "/home",
-                controller: 'HomeController',
-                templateUrl: window.appConfig.baseUrl + '/templates/home/home.html'
+            .state('index.home', {
+                url: "home",
+                views: {
+                    'navigation': {
+                        controller: 'HomeController',
+                        templateUrl: window.appConfig.baseUrl + '/templates/partials/navigation.html'
+                    },
+                    'sidebar':
+                    {
+                        controller: 'HomeController',
+                        templateUrl: window.appConfig.baseUrl + '/templates/partials/sidenav.html'
+                    }
+                }
             });
 
         $urlRouterProvider.otherwise('/');
-
-        // $locationProvider.html5Mode(true);
 
         /**
          * Configure theme color palletes

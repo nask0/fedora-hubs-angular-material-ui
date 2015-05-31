@@ -1,10 +1,57 @@
-<div layout="column" flex id="content">
 
+<div layout="row" flex id="content">
     <md-content layout="column" flex class="md-padding">
-        <h1>Home template</h1>
-        <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+        <md-tabs>
+            <md-tab label="Tab 1">
+                <md-tab-body md-center-tabs>
+                    <md-content layout-padding>
+                        Lorem ipsum dolor sit amet, ne quod novum mei.
+                    </md-content>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab label="Design Team">
+                <md-tab-body>
+                    <md-content layout-padding>
+                        Lorem ipsum dolor sit amet, ne quod novum mei.
+                    </md-content>
+                </md-tab-body>
+            </md-tab>
+
+            <md-tab label="Tab #3">
+                <md-tab-body>
+                    <md-content layout-padding>
+                        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                    </md-content>
+                </md-tab-body>
+            </md-tab>
+        </md-tabs>
     </md-content>
 
+    <md-content layout="row" flex class="md-padding">
+        <md-card>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <span>Some widget</span>
+                    <!-- fill up the space between left and right area -->
+                    <span flex></span>
+                    <md-button>
+                        Action!
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-card-content>
+                <h2>Card headline</h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                    the leap int electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </md-card-content>
+            <md-card-footer>
+                Card footer
+            </md-card-footer>
+        </md-card>
+    </md-content>
 </div>
