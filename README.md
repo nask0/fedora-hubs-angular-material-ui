@@ -72,11 +72,18 @@ If you have questions, suggestions or ideas that you think should go into the do
 
 ## Future work & discussion
 ---
+Here is what i found so far about Fedora Hubs project:
+* Wiki page - https://fedoraproject.org/wiki/Fedora_Hubs
+* Public pad - http://piratepad.net/fedora-hubs-mar2015
+* Meeting videos - https://www.youtube.com/watch?v=EJbfPGMXrSg | https://www.youtube.com/watch?v=lserso6yCXg
+* Fedora hubs design team repo - https://github.com/fedoradesign/fedora-hubs
+* Ralph prototype and ideas - https://github.com/ralphbean/fedora-hubs-prototype
+
 Taking into account the fact that i am not completely familiar with whole current  infrastructure of web projects, do not hesitate to contact me for further discussions, suggestions, advices and support.   
 I already have implemented above "secured connection" scenario on Angular and currently working on some mockups / UI in order to describe / illustrate better the idea. I will add mockups in this repo.
 
 ## Useful resources
-A better way to (quick) learn AngularJS: https://thinkster.io/a-better-way-to-learn-angularjs/
+Quick start with AngularJS: https://thinkster.io/a-better-way-to-learn-angularjs/
 http://www.nganimate.org/ - basic animations
 https://angular-ui.github.io/
 https://material.angularjs.org/latest/
