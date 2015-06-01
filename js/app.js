@@ -42,15 +42,15 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
                 views: {
                     'navigation': {
                         controller: 'HomeController',
-                        templateUrl: window.appConfig.baseUrl + '/templates/partials/navigation.html'
+                        templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html'
                     },
                     'sidenav': {
                         controller: 'HomeController',
-                        templateUrl: window.appConfig.baseUrl + '/templates/partials/sidenav.html'
+                        templateUrl: window.appConfig.baseUrl + 'templates/partials/sidenav.html'
                     },
                     'content': {
                         controller: 'HomeController',
-                        templateUrl: window.appConfig.baseUrl + '/templates/home/home.html'
+                        templateUrl: window.appConfig.baseUrl + 'templates/home/home.html'
                     }
                 }
             })
@@ -60,12 +60,12 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
                 views: {
                     'navigation': {
                         controller: 'HomeController',
-                        templateUrl: window.appConfig.baseUrl + '/templates/partials/navigation.html'
+                        templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html'
                     },
                     'sidebar':
                     {
                         controller: 'HomeController',
-                        templateUrl: window.appConfig.baseUrl + '/templates/partials/sidenav.html'
+                        templateUrl: window.appConfig.baseUrl + 'templates/partials/sidenav.html'
                     }
                 }
             });
@@ -94,7 +94,7 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
     function($rootScope, $location, $log, userService) {
         // load session user fake data
         $rootScope.currentUser = {};
-        userService.getFakeData().then(
+        /*userService.getFakeData().then(
             function( data ) {
                 $rootScope.currentUser = data;
                 $log.log($rootScope.currentUser);
@@ -104,6 +104,7 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
                 $log.log(err);
             }
         );
+        */
 
         $rootScope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams){
