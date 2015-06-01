@@ -59,10 +59,12 @@
 
             <md-card-content>
                 <md-tabs>
-                    <md-tab label="Web team">
+                    <md-tab label="Web team" md-on-select="fetchTabContent('subscribers'); ">
                         <md-tab-body md-center-tabs>
                             <md-content layout-padding>
-                                Lorem ipsum dolor sit amet, ne quod novum mei.<br />
+                                <p>
+                                    {{ tabContent }}
+                                </p>
                             </md-content>
                         </md-tab-body>
                     </md-tab>
