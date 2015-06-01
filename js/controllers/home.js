@@ -7,6 +7,7 @@ angular.module('fedoraHubs')
 
         $scope.tabError = false;
         $scope.tabContent = false;
+
         $scope.fetchTabContent = function( tab ) {
             switch( tab ) {
                 case 'subscribers':
@@ -15,7 +16,7 @@ angular.module('fedoraHubs')
                             $scope.tabContent = data;
                         },
                         function( error ) {
-                            $scope.tabContent = 'Error occured :' + error;
+                            $scope.tabContent = 'Error occured while fetching data !';
                             console.log(error);
                         }
                     )
