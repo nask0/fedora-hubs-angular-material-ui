@@ -1,65 +1,98 @@
 
-<div layout="row" flex id="content">
-    <md-content layout="column" flex flex-order="2" class="md-padding">
-        <md-tabs>
-            <md-tab label="Tab 1">
-                <md-tab-body md-center-tabs>
-                    <md-content layout-padding>
-                        Lorem ipsum dolor sit amet, ne quod novum mei.
-                    </md-content>
-                </md-tab-body>
-            </md-tab>
-
-            <md-tab label="Design Team">
-                <md-tab-body>
-                    <md-content layout-padding>
-                        Lorem ipsum dolor sit amet, ne quod novum mei.
-                    </md-content>
-                </md-tab-body>
-            </md-tab>
-
-            <md-tab label="Tab #3">
-                <md-tab-body>
-                    <md-content layout-padding>
-                        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
-                    </md-content>
-                </md-tab-body>
-            </md-tab>
-        </md-tabs>
-    </md-content>
-
-    <md-content layout="row" flex class="md-padding">
+<div layout="row" layout-margin layout-fill layout-padding>
+    <md-content flex layout="column">
         <md-card>
             <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <div flex="5" id="logo" >
-                        <img src="img/fedora_infinity_48x48.png" />
-                    </div>
-
-                    <div flex="10">
-                        <md-button ui-sref="index">
-                            <h1>Hubs</h1>
-                        </md-button>
-                    </div>
-                    <!-- fill up the space between left and right area -->
-                    <span flex></span>
-                    <md-button>
-                        Action!
-                    </md-button>
+                <!--
+                    layout="<align>" is good thing !
+                    @todo: Use it in navigation too
+                    @todo: This need redesign and image fixes
+                -->
+                <div class="md-toolbar-tools" layout-align="center center">
+                    <img src="img/fedora_infinity_48x48.png" style="height: 48px; width:48px; margin-right: 10px;" />
+                    <h1>hubs</h1>
                 </div>
             </md-toolbar>
-            <md-card-content>
-                <h2>Card headline</h2>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
-                    1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
-                    the leap int electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
-                    Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+
+            <md-card-content layout="column" layout-align="center center" class="md-padding">
+                <h2>Login</h2>
+                <div class="row">
+                    <md-input-container>
+                        <label>Fedora Accounts System username</label>
+                        <input type="text" ng-model="user.state"/>
+                    </md-input-container>
+
+                    <md-input-container>
+                        <label>Password</label>
+                        <input type="password" ng-model="user.password"/>
+                    </md-input-container>
+
+                    <button type="submit" class="btn btn-primary btn-sm" style="float:right;">Log me in</button>
+                </div><br />
+
+
+
             </md-card-content>
+
             <md-card-footer>
-                Card footer
+                <!--<div class="row">-->
+                    <a href="#" style="float:left;">Forgot password?</a>
+                    <a href="#" style="float:right;">Need account?</a>
+                <!--</div>-->
             </md-card-footer>
         </md-card>
+    </md-content>
+
+    <md-content layout="column" flex class="md-padding">
+        <md-card>
+            <md-toolbar>
+                <!--
+                    layout="<align>" is good thing !
+                    @todo: Use it in navigation too
+                    @todo: This need redesign and image fixes
+                -->
+                <div class="md-toolbar-tools" layout-align="center center">
+                    <img src="img/fedora_infinity_48x48.png" style="height: 48px; width:48px; margin-right: 10px;" />
+                    <h1>hubs</h1>
+                </div>
+            </md-toolbar>
+
+            <md-card-content>
+                <md-tabs>
+                    <md-tab label="Web team">
+                        <md-tab-body md-center-tabs>
+                            <md-content layout-padding>
+                                Lorem ipsum dolor sit amet, ne quod novum mei.<br />
+                            </md-content>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <md-tab label="Design Team">
+                        <md-tab-body>
+                            <md-content layout-padding>
+                                Lorem ipsum dolor sit amet, ne quod novum mei.
+                                .<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />
+                                .<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />
+                            </md-content>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <md-tab label="Infrastructure team">
+                        <md-tab-body>
+                            <md-content layout-padding>
+                                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                            </md-content>
+                        </md-tab-body>
+                    </md-tab>
+                </md-tabs>
+
+            </md-card-content>
+
+            <md-card-footer>
+
+            </md-card-footer>
+        </md-card>
+
+
     </md-content>
 </div>
