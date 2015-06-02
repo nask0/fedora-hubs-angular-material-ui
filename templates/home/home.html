@@ -88,9 +88,9 @@
                                     <h4>Group owners:</h4>
                                     <p>
                                         <div layout="row">
-                                            <div flex ng-repeat="(name, img) in tabContent.owners">
+                                            <div flex layout="column" ng-repeat="(name, img) in tabContent.owners">
                                                 <a ng-show="img && name" href="{{ img }}" title="{{ name }}" >
-                                                    <img src="{{ img }}" />
+                                                    <img src="{{ img }}" width="64"  height="64"/>
                                                 </a>
                                             </div>
                                         </div>
