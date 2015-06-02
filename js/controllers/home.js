@@ -10,14 +10,18 @@ angular.module('fedoraHubs')
         $scope.tabLoading = false;
 
         $scope.loadWidgetData  = function( widget ) {
+            $scope.tabContent = false;
             $scope.tabLoading = true;
-            DemoHubs.loadWidgetData( widget ).then(
+            DemoHubs.getWidget( widget ).then(
                 function( data ) {
-                    $timeout(function() {
-                        console.log('Response data:', data);
+                    $scope.tabContent = data;
+                    $scope.tabLoading = false;
+
+/*                    $timeout(function() {
+                        // console.log('Response data:', data);
                         $scope.tabContent = data;
                         $scope.tabLoading = false;
-                    }, 650); // lag a little in order to show loading :)
+                    }, 500); // lag a little in order to show loader*/
 
                 },
                 function( error, httpStatus ) {
@@ -28,6 +32,8 @@ angular.module('fedoraHubs')
             );
         };
 
-        $scope.loadWidgetData( 1 );
+        if ( !$scope.tabContent ) {
+            $scope.loadWidgetData(1);
+        }
     }
 ]);

@@ -41,11 +41,11 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
                 url: "/",
                 views: {
                     'navigation': {
-                        controller: 'HomeController',
+                        /*controller: 'NavigationController',*/
                         templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html'
                     },
                     'sidenav': {
-                        controller: 'HomeController',
+                        /*controller: 'SidenavController',*/
                         templateUrl: window.appConfig.baseUrl + 'templates/partials/sidenav.html'
                     },
                     'content': {
@@ -54,22 +54,16 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
                     }
                 }
             })
-            // home
-            .state('index.home', {
-                url: "home",
-                views: {
-                    'navigation': {
-                        controller: 'HomeController',
-                        templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html'
-                    },
-                    'sidebar':
-                    {
-                        controller: 'HomeController',
-                        templateUrl: window.appConfig.baseUrl + 'templates/partials/sidenav.html'
-                    }
-                }
+            // design
+            .state('index.design', {
+                url: "design"
+                /*views: {
+                 'content': {
+                    controller: 'ExampleController',
+                    templateUrl: window.appConfig.baseUrl + 'templates/example/example.html'
+                 }
+                }*/
             });
-
         $urlRouterProvider.otherwise('/');
 
         /**

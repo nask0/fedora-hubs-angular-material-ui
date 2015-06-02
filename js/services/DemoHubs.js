@@ -11,10 +11,10 @@ angular.module('fedoraHubs')
         function( $http, $q ) {
             var DemoHubs= {};
 
-            DemoHubs.loadWidgetData = function( widget ) {
+            DemoHubs.getWidget = function( widget ) {
                 var deferred = $q.defer();
 
-                $http.get('http://localhost:5000/designteam/' + parseInt(widget) + '/json/')
+                $http.get('http://localhost:5000/designteam/' + parseInt(widget) + '/json/', {unique:true})
                     // additional params: status, headers, config
                     .success( function(data) {
                         // this callback will be called asynchronously
@@ -27,24 +27,6 @@ angular.module('fedoraHubs')
                     });
 
                 return deferred.promise;
-            };
-
-            DemoHubs.getSubscribers = function() {
-                var deferred = $q.defer();
-
-                $http.get('http://localhost:5000/designteam/1/json/')
-                     .success(
-                        function(data) { // additional params: status, headers, config
-                            // this callback will be called asynchronously when the response is available
-                            deferred.resolve(data);
-                        }
-                    )
-                    .error(
-                        function(data, status) { // , headers, config
-                            // called asynchronously if an error occurs or server returns response with an error status.
-                            deferred.reject(data, status);
-                        }
-                    );
             };
 
             return DemoHubs;

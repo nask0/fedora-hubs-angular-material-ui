@@ -58,7 +58,7 @@
             </md-toolbar>
 
             <md-card-content>
-                <md-tabs>
+                <md-tabs md-index="1">
                     <md-tab label="Subscribers" md-on-select="loadWidgetData(1);">
                         <md-tab-body md-center-tabs>
                             <md-content layout-padding>
@@ -88,9 +88,9 @@
                                     <h4>Group owners:</h4>
                                     <p>
                                         <div layout="row">
-                                            <div flex ng-repeat="owner in tabContent.owners">
-                                                <a href="{{ owner }}" title="">
-                                                    <img ng-show="owner" src="{{ owner }} /">
+                                            <div flex ng-repeat="(name, img) in tabContent.owners">
+                                                <a ng-show="img && name" href="{{ img }}" title="{{ name }}" >
+                                                    <img src="{{ img }}" />
                                                 </a>
                                             </div>
                                         </div>
