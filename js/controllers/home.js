@@ -14,14 +14,11 @@ angular.module('fedoraHubs')
             $scope.tabLoading = true;
             DemoHubs.getWidget( widget ).then(
                 function( data ) {
-                    $scope.tabContent = data;
-                    $scope.tabLoading = false;
-
-/*                    $timeout(function() {
-                        // console.log('Response data:', data);
+                    $timeout(function() {
+                        console.log('Response data:', data);
                         $scope.tabContent = data;
                         $scope.tabLoading = false;
-                    }, 500); // lag a little in order to show loader*/
+                    }, 500); // lag a little in order to show loader
 
                 },
                 function( error, httpStatus ) {

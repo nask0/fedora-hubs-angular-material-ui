@@ -10,16 +10,13 @@ $_widget_data->subscribers = mt_rand(1000, 999999);
 $_widget_data->source_url = '/source/stats';
 
 $_widget_another_data = new stdClass();
-$_widget_data->downloads = mt_rand(1,99999);
-$_widget_data->updates = mt_rand(1000, 999999);
-$_widget_data->source_url = '/example';
+$_widget_another_data ->downloads = mt_rand(1,99999);
+$_widget_another_data ->updates = mt_rand(1000, 999999);
+$_widget_another_data ->source_url = '/example';
 
 $widgetData = array(
     'widget' => $_widget,
-    'data' => array(
-        $_widget_data,
-        $_widget_another_data
-    )
+    'data' => [$_widget_data, $_widget_another_data]
 );
 
 echo json_encode($widgetData);

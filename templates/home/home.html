@@ -89,6 +89,7 @@
                                     <p>
                                         <div layout="row">
                                             <div flex layout="column" ng-repeat="(name, img) in tabContent.owners">
+                                                <h5>{{ name }}</h5>
                                                 <a ng-show="img && name" href="{{ img }}" title="{{ name }}" >
                                                     <img src="{{ img }}" width="64"  height="64"/>
                                                 </a>
