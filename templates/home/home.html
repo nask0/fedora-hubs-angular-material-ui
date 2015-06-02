@@ -59,30 +59,58 @@
 
             <md-card-content>
                 <md-tabs>
-                    <md-tab label="Web team" md-on-select="fetchTabContent('subscribers'); ">
+                    <md-tab label="Subscribers" md-on-select="loadWidgetData(1);">
                         <md-tab-body md-center-tabs>
                             <md-content layout-padding>
-                                <p>
+                                <div ng-show="tabLoading">
+                                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                                </div>
+                                <div ng-show="!tabLoading">
+                                    <h3>Members: {{ tabContent.members }}</h3>
+                                    <h3>Subscribers: {{ tabContent.subscribers }}</h3>
+                                </div>
+                            </md-content>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <md-tab label="Info" md-on-select="loadWidgetData(2);">
+                        <md-tab-body>
+                            <md-content layout-padding>
+                                <div ng-show="tabLoading">
+                                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                                </div>
+                                <div ng-show="!tabLoading">
+                                    <h4>Community rules:</h4>
+                                    <p>
+                                        <a href="{{ tabContent.link }}">Community Rules and Guidelines</a>
+                                    </p>
+
+                                    <h4>Group owners:</h4>
+                                    <p>
+                                        <div layout="row">
+                                            <div flex ng-repeat="owner in tabContent.owners">
+                                                <a href="{{ owner }}" title="">
+                                                    <img ng-show="owner" src="{{ owner }} /">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                            </md-content>
+                        </md-tab-body>
+                    </md-tab>
+
+                    <md-tab label="Notes" md-on-select="loadWidgetData(4);">
+                        <md-tab-body>
+                            <md-content layout-padding>
+                                <div ng-show="tabLoading">
+                                    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                                </div>
+                                <div ng-show="!tabLoading">
                                     {{ tabContent }}
-                                </p>
-                            </md-content>
-                        </md-tab-body>
-                    </md-tab>
+                                </div>
 
-                    <md-tab label="Design Team">
-                        <md-tab-body>
-                            <md-content layout-padding>
-                                Lorem ipsum dolor sit amet, ne quod novum mei.
-                                .<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />
-                                .<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />.<br />
-                            </md-content>
-                        </md-tab-body>
-                    </md-tab>
 
-                    <md-tab label="Infrastructure team">
-                        <md-tab-body>
-                            <md-content layout-padding>
-                                <md-progress-circular md-mode="indeterminate"></md-progress-circular>
                             </md-content>
                         </md-tab-body>
                     </md-tab>
