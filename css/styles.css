@@ -16,3 +16,58 @@
     border: 1px solid #aeaeae;
     border-top:none;*/
 }
+.sidenav {
+
+}
+
+.sidenav .profile {
+    padding: 10px 0px 10px 7px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.sidenav .profile img {
+    border-radius: 100%;
+    border: 2px solid #eeeeee;
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+.sidenav .profile .group {
+    margin-left: 65px;
+    color: #464646;
+}
+
+.sidenav ul.nav-list li {
+    position: relative;
+}
+.sidenav ul.nav-list li a{
+    text-decoration: none;
+    padding: 7px 15px;
+    padding-left: 12px;
+    display: table;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+}
+.sidenav ul.nav-list li a:hover {
+    color: #455a64;
+    background: #f7f7f7;
+}
+.sidenav ul.nav-list li span.text{
+    margin-left: 20px;
+    margin-top: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: inline-block;
+    position: absolute;
+}
+
+.sidenav .nav-list li.active a {
+    background: #f7f7f7;
+    padding: 7px 15px;
+    padding-left: 12px;
+    display: table;
+    width: 100%;
+    white-space: nowrap;
+}
