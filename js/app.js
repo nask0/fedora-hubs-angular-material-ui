@@ -45,7 +45,7 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
                         templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html'
                     },
                     'sidenav': {
-                        /*controller: 'SidenavController',*/
+                        controller: 'SidenavController',
                         templateUrl: window.appConfig.baseUrl + 'templates/partials/sidenav.html'
                     },
                     'content': {

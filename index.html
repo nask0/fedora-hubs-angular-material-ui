@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.css">
 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
         <!-- Loading local styles -->
         <link rel="stylesheet" href="css/styles.css">
 
@@ -39,6 +41,7 @@
         <script src="js/services/DemoHubs.js"></script>
 
         <script src="js/controllers/home.js"></script>
+        <script src="js/controllers/sidenav.js"></script>
 
 
         <script type="text/javascript">
@@ -54,11 +57,13 @@
         <div ui-view="navigation"></div>
 
         <div layout="row" flex>
-            <md-sidenav layout="column" flex class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+            <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" class="md-sidenav-left">
                 <div ui-view="sidenav"></div>
             </md-sidenav>
 
-            <div layout="column" flex ui-view="content"></div>
+            <div layout="column" class="content" flex>
+                <div ui-view="content"></div>
+            </div>
         </div>
     </body>
 </html>

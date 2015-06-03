@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('fedoraHubs')
-.controller('HomeController', ['$scope', '$rootScope', '$mdSidenav', '$timeout', 'DemoHubs',
-    function( $scope, $rootScope, $mdSidenav, $timeout, DemoHubs ) {
+.controller('HomeController', ['$scope', '$rootScope', '$timeout', 'DemoHubs',
+    function( $scope, $rootScope, $timeout, DemoHubs ) {
         // $scope.openLeftMenu = function() { $mdSidenav('left').toggle(); };
 
         $scope.tabError = false;
