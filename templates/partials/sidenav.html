@@ -7,18 +7,14 @@
         </div>
     </div>
 
-    <ul class="list-unstyled nav-list">
-        <li class="active">
-            <a href="#">
-                <i class="material-icons">toys</i>
-                <span class="text">Design team</span>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="ion ion-email"></i>
-                <span class="text">Infrastructure team</span>
-            </a>
-        </li>
-    </ul>
+    <div ng-if="debug" id='cssmenu'>
+        <ul>
+            <li><a href='#'><span>Home</span></a></li>
+            <li class='active '><a href='#'><span>Products</span></a>
+
+            </li>
+            <li><a href='#'><span>About</span></a></li>
+            <li class='last'><a href='#'><span>Contact</span></a></li>
+        </ul>
+    </div>
 </nav>

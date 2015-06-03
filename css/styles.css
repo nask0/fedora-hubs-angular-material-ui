@@ -16,58 +16,116 @@
     border: 1px solid #aeaeae;
     border-top:none;*/
 }
-.sidenav {
 
-}
-
-.sidenav .profile {
+.profile {
     padding: 10px 0px 10px 7px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-.sidenav .profile img {
+.profile img {
     border-radius: 100%;
     border: 2px solid #eeeeee;
     width: 50px;
     height: 50px;
     float: left;
 }
-.sidenav .profile .group {
+.profile .group {
     margin-left: 65px;
     color: #464646;
 }
 
-.sidenav ul.nav-list li {
+
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#cssmenu ul {
+    position: relative;
+    float: left;
+}
+#cssmenu ul li {
+    float: left;
+    min-height: 1px;
+    line-height: 1em;
+    vertical-align: middle;
     position: relative;
 }
-.sidenav ul.nav-list li a{
-    text-decoration: none;
-    padding: 7px 15px;
-    padding-left: 12px;
-    display: table;
-    width: 100%;
-    height: 100%;
-    white-space: nowrap;
-}
-.sidenav ul.nav-list li a:hover {
-    color: #455a64;
-    background: #f7f7f7;
-}
-.sidenav ul.nav-list li span.text{
-    margin-left: 20px;
-    margin-top: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    display: inline-block;
-    position: absolute;
+
+#cssmenu ul li:hover {
+    position: relative;
+    z-index: 599;
+    cursor: default;
 }
 
-.sidenav .nav-list li.active a {
-    background: #f7f7f7;
-    padding: 7px 15px;
-    padding-left: 12px;
+#cssmenu ul li:hover > ul {
+    visibility: visible;
+}
+#cssmenu ul ul {
+    top: 1px;
+    left: 99%;
+}
+#cssmenu ul li {
+    float: none;
+}
+
+
+
+/* Custom CSS Styles */
+#cssmenu {
+    /*width: 200px;*/
+    background: #333333;
+    zoom: 1;
+    font-size: 12px;
+}
+#cssmenu:before {
+    content: '';
+    display: block;
+}
+#cssmenu:after {
+    content: '';
     display: table;
-    width: 100%;
-    white-space: nowrap;
+    clear: both;
+}
+#cssmenu a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#cssmenu > ul {
+    width:100%;
+}
+
+#cssmenu > ul > li > a {
+    border-right: 4px solid #1b9bff;
+    color: #ffffff;
+}
+#cssmenu > ul > li > a:hover {
+    color: #ffffff;
+}
+#cssmenu > ul > li.active a {
+    background: #1b9bff;
+}
+#cssmenu > ul > li a:hover,
+#cssmenu > ul > li:hover a {
+    background: #1b9bff;
+}
+#cssmenu li {
+    position: relative;
+}
+
+
+#cssmenu.align-right > ul > li > a {
+    border-left: 4px solid #1b9bff;
+    border-right: none;
+}
+#cssmenu.align-right {
+    float: right;
+}
+#cssmenu.align-right li {
+    text-align: right;
 }
