@@ -9,6 +9,19 @@ angular.module('fedoraHubs')
         $scope.tabContent = false;
         $scope.tabLoading = false;
 
+        $scope.getMatches = function(q) {
+            var items = [
+                {display: "FAS"},
+                {display: "Hubs"},
+                {display: "Design"},
+                {display: "Infrastructure"}
+            ];
+
+            angular.forEach(items, function(item) {
+
+            });
+        };
+
         $scope.loadWidgetData  = function( widget ) {
             $scope.tabContent = false;
             $scope.tabLoading = true;

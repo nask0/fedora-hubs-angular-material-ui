@@ -91,6 +91,8 @@ AngularUI git : https://angular-ui.github.io/
 AngularJS SEO tips: https://scotch.io/tutorials/angularjs-seo-with-prerender-io?_escaped_fragment_=tag#caveats
 Material Design docs : https://material.angularjs.org/latest/
 
+Migration from 1.3 to 2.X notices: http://paislee.io/migrating-to-angularjs-2-0/
+
 https://github.com/angular/material/issues/1490
 Flexbox css3 properties: https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties
 https://www.linkedin.com/pulse/material-design-intro-coding-guidelines-sergio-villasenor

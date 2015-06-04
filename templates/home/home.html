@@ -1,6 +1,8 @@
 <div layout="column" layout-padding>
-<!-- @todo: submenu goes here -->
+    <!-- @todo: submenu goes here -->
 </div>
+
+<!-- @breadcrumbs -->
 <div layout="column" layout-padding>
     <ol class="breadcrumb">
         <li><a ui-sref="index" href="#">Design team</a></li>
@@ -23,25 +25,28 @@
                 </div>
             </md-toolbar>
 
-            <md-card-content layout="column" layout-align="center center" class="md-padding">
-                <h2>Login</h2>
-                <div class="row">
-                    <md-input-container>
-                        <label>Fedora Accounts System username</label>
-                        <input type="text" ng-model="user.state"/>
-                    </md-input-container>
+            <div id="loginBox" layout="column" layout-align="center center" class="md-padding">
 
-                    <md-input-container>
-                        <label>Password</label>
-                        <input type="password" ng-model="user.password"/>
-                    </md-input-container>
+                <md-card-content>
 
-                    <button type="submit" class="btn btn-primary btn-sm" style="float:right;">Log me in</button>
-                </div><br />
+                    <h2>Login</h2>
+                    <div class="row">
+                        <md-input-container>
+                            <label>Fedora Accounts System username</label>
+                            <input type="text" /> <!-- ng-model="user.state" -->
+                        </md-input-container>
 
+                        <md-input-container>
+                            <label>Password</label>
+                            <input type="password" /> <!-- ng-model="user.password" -->
+                        </md-input-container>
 
-                <button data-effect="st-effect-12">Open door</button>
-            </md-card-content>
+                        <button type="submit" class="btn btn-primary btn-sm" style="float:right;">Log me in</button>
+                    </div>
+
+                </md-card-content>
+
+            </div>
 
             <md-card-footer>
                 <!--<div class="row">-->
