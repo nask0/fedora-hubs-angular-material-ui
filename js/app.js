@@ -63,6 +63,22 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
                     templateUrl: window.appConfig.baseUrl + 'templates/example/example.html'
                  }
                 }*/
+            })
+            .state('test', {
+                url: '/test',
+                views: {
+                    'navigation': {
+                        templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html'
+                    },
+                    'sidenav': {
+                        controller: 'SidenavController',
+                        templateUrl: window.appConfig.baseUrl + 'templates/partials/sidenav.html'
+                    },
+                    'content': {
+                        controller: 'TestsController',
+                        templateUrl: window.appConfig.baseUrl + 'templates/partials/tests.html'
+                    }
+                }
             });
         $urlRouterProvider.otherwise('/');
 

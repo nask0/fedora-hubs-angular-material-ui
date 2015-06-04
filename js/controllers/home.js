@@ -1,26 +1,25 @@
 'use strict';
 
 angular.module('fedoraHubs')
-.controller('HomeController', ['$scope', '$rootScope', '$timeout', 'DemoHubs',
-    function( $scope, $rootScope, $timeout, DemoHubs ) {
+.controller('HomeController', ['$scope', '$rootScope', '$timeout', '$http', 'DemoHubs',
+    function( $scope, $rootScope, $timeout, $http, DemoHubs ) {
         // $scope.openLeftMenu = function() { $mdSidenav('left').toggle(); };
 
         $scope.tabError = false;
         $scope.tabContent = false;
         $scope.tabLoading = false;
 
-        $scope.getMatches = function(q) {
-            var items = [
-                {display: "FAS"},
-                {display: "Hubs"},
-                {display: "Design"},
-                {display: "Infrastructure"}
-            ];
-
-            angular.forEach(items, function(item) {
-
-            });
-        };
+        /*$http.get('https://badges.fedoraproject.org/user/nask0/json')
+        .then(function(data, headers) {
+            console.log(data);
+            console.log(headers);
+            },
+            function(error, headers) {
+                console.log(data);
+                console.log(headers);
+            }
+        );
+        */
 
         $scope.loadWidgetData  = function( widget ) {
             $scope.tabContent = false;
