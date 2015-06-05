@@ -3,6 +3,9 @@
 * add "#!" to url (for SEO resons)
 * optimize images
 * make header fixed
+* Stream view / Timeline 
+* * adjust styles
+* * make it dynamic
 
 
 ### Research
