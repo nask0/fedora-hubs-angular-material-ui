@@ -59,6 +59,44 @@
                 <div ui-view="sidenav"></div>
             </md-sidenav>
 
+           <div layout="column">
+               <aside id="chat"> <!--class="toggled"-->
+
+                   <md-tabs md-center-tabs>
+                       <md-tab style="width:100%;" label="Friends"></md-tab>
+                       <md-tab label="Online"></md-tab>
+                   </md-tabs>
+
+                   <div class="chat-search">
+                       <div class="fg-line">
+                           <md-input-container>
+                               <label>Search people</label>
+                               <input type="text" /> <!-- ng-model="user.state" -->
+                           </md-input-container>
+                       </div>
+                   </div>
+
+                   <div class="tab-content">
+                       <div role="tabpanel" class="tab-pane fade active in" id="friends">
+                           <div class="listview">
+                               <a class="lv-item" href="">
+                                   <div class="media">
+                                       <div class="pull-left p-relative">
+                                           <img class="lv-img-sm" src="img/profile-test.jpg" alt="">
+                                           <i class="chat-status-busy"></i>
+                                       </div>
+                                       <div class="media-body">
+                                           <div class="lv-title">Jonathan Morris</div>
+                                           <small class="lv-small">Available</small>
+                                       </div>
+                                   </div>
+                               </a>
+                           </div>
+                       </div>
+
+                   </div>
+               </aside>
+           </div>
             <div layout="column" class="content" flex>
                 <div ui-view="content"></div>
             </div>
