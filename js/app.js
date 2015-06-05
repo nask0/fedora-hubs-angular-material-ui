@@ -122,17 +122,13 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
     function($rootScope, $location, $log, userService) {
         // load session user fake data
         $rootScope.currentUser = {};
-        /*userService.getFakeData().then(
-            function( data ) {
-                $rootScope.currentUser = data;
-                $log.log($rootScope.currentUser);
-            },
-            function(err) {
-                $log.warn('Cannot load user fake data !');
-                $log.log(err);
-            }
-        );
-        */
+
+        $rootScope.chatToggled = false;
+        $rootScope.toggleChat = function() {
+            angular.element( document.querySelector( '#chat' ) ).toggleClass('toggled');
+            /*console.log(angular.element( document.getElementById('#chat') ).toggleClass('toggled'));*/
+            !! $rootScope.chatToggled;
+        };
 
         $rootScope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams){

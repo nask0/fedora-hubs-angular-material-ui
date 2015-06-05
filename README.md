@@ -70,6 +70,11 @@ If you have questions, suggestions or ideas that you think should go into the do
 * Can write everything for web in PHP ( not wide used within Fedora websites community as long i can see :) ). Good knowledge of [Zephir](zephir-lang.com), [Phalcon](http://phalconphp.com/),   [ZeroMQ](http://zeromq.org/)
 * Learning Python recently
 
+## Must be implemented
+---
+https://www.owasp.org/index.php/REST_Security_Cheat_Sheet
+http://haacked.com/archive/2009/06/25/json-hijacking.aspx/ [ while(1); ]
+
 ## Future work & discussion
 ---
 Here is what i found so far about Fedora Hubs project:

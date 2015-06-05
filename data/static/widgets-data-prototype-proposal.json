@@ -1,0 +1,19 @@
+{
+  "widget":{
+    "id":534,
+    "name":"Subscribers",
+    "desc":"Widget description"
+  },
+  "data":[
+    {
+      "members":27269,
+      "subscribers":57550,
+      "source_url":"\/source\/stats"
+    },
+    {
+      "downloads":30841,
+      "updates":943454,
+      "source_url":"\/example"
+    }
+  ]
+}
