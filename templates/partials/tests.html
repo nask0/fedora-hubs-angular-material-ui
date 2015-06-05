@@ -2,25 +2,97 @@
     <!-- @todo: submenu goes here -->
 </div>
 
-<!-- @breadcrumbs -->
-<div layout="column" layout-padding>
-    <ol class="breadcrumb">
-        <li><a ui-sref="index" href="#">Design team</a></li>
-        <li class="active">Dashboard</li>
-    </ol>
+<div layout="column">
+
+    <div class="splash">
+        <div style="border-top:1px solid #fcfcfc; background:url('img/hub_bg1.png') center center; background-size:cover;">
+
+            <div layout="row" layout-align="space-between center" style="background-color: rgba(0,0,0,0.2); padding-left:30px; padding-right: 30px; padding-top:30px; padding-bottom:10px;">
+                <div style="color:#fff; font-size:1.5em;">
+                    Design team
+                </div>
+                <div>
+                    <a class="btn btn-sm btn-success btn-rounded">
+                        <span>Follow</span> (8612)
+                    </a>
+                    <a class="btn btn-sm btn-info btn-rounded">
+                        Subscribe ({{ hubStats.subscribers }})
+                    </a>
+                </div>
+            </div>
+
+            <div layout="row" layout-align="space-between center" style="background-color: rgba(0,0,0,0.2); padding-left:30px; padding-right: 30px; padding-bottom: 10px;">
+                <div style="color:#fff; font-size:1em;">
+                    Design team message of the day
+                </div>
+
+                <div>
+                    <a href="#/design" class="" style="color:#2196f3;">
+                        + Join hub ({{ hubStats.members }})
+                    </a>
+                </div>
+
+            </div>
+
+            <div layout="row" layout-align="space-between center" style="background-color: rgba(0,0,0,0.2); padding-left:20px; padding-right: 30px; padding-bottom: 30px; color:#fff;">
+                <md-button>
+                    <md-icon md-svg-src="img/icons/ic_file_upload_black_24px.svg" alt="file_upload"></md-icon>
+                    update splash
+                </md-button>
+                </div>
+        </div>
+    </div>
+
+    <div class="stream-header">
+        <md-tabs>
+            <md-tab label="Stream"></md-tab>
+            <md-tab label="Members"></md-tab>
+            <md-tab label="Stats"></md-tab>
+        </md-tabs>
+    </div>
 </div>
 
 <div layout="row">
-    <md-content flex="50" layout="column" class="content">
+    <md-content layout="column" flex class="content">
         <md-card>
-            <div layout="column" layout-align="center center" class="md-padding">
+            <div layout="column" layout-align="left top" class="layout-fill ">
 
                 <md-card-content>
+                    <h2>Alerts</h2>
 
-                    <h2>Tests</h2>
-                    <div class="row">
+                    <md-grid-list md-cols="8" md-gutter="1em" md-row-height="4:3">
+                        <md-grid-tile>
+                            <a href="#" ng-click="showAlert()" class="md-raised">SHOW ALERT</a>
+                        </md-grid-tile>
+                        <md-grid-tile>
+                            <a href="#" ng-click="showDialog($event)" class="md-raised">CUSTOM</a>
+                        </md-grid-tile>
+                    </md-grid-list>
 
-                    </div>
+                </md-card-content>
+
+            </div>
+
+            <md-card-footer>
+                CARD FOOTER
+            </md-card-footer>
+
+        </md-card>
+    </md-content>
+
+    <!--<md-content flex="50" layout="column" class="content">
+    </md-content>-->
+</div>
+
+<div layout="row">
+    <md-content layout="column" flex class="content">
+        <md-card>
+            <div layout="column" layout-align="left top" class="layout-fill ">
+
+                <md-card-content>
+                    <h1>Chips</h1>
+                    <md-chips ng-model="myItems" placeholder="Add an item" readonly="isReadOnly">
+                    </md-chips>
 
                 </md-card-content>
 

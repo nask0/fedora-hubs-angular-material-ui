@@ -35,97 +35,25 @@
 }
 
 
-#cssmenu ul,
-#cssmenu ul li,
-#cssmenu ul ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-#cssmenu ul {
-    position: relative;
-    float: left;
-}
-#cssmenu ul li {
-    float: left;
-    min-height: 1px;
-    line-height: 1em;
-    vertical-align: middle;
-    position: relative;
+#mainNav {
+    /*display:block;*/
+    background: #4285F4;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    /*height: 65px;*/
+    /*position: fixed;*/
+    /*z-index: 10;*/
+    /*width: 100%;*/
+    /*left: 0;*/
+    /*padding-right: 10px;*/
+    /*top: 0;*/
 }
 
-#cssmenu ul li:hover {
-    position: relative;
-    z-index: 599;
-    cursor: default;
-}
-
-#cssmenu ul li:hover > ul {
-    visibility: visible;
-}
-#cssmenu ul ul {
-    top: 1px;
-    left: 99%;
-}
-#cssmenu ul li {
-    float: none;
-}
-
-
-
-/* Custom CSS Styles */
-#cssmenu {
-    /*width: 200px;*/
-    background: #333333;
-    zoom: 1;
-    font-size: 12px;
-}
-#cssmenu:before {
-    content: '';
-    display: block;
-}
-#cssmenu:after {
-    content: '';
-    display: table;
-    clear: both;
-}
-#cssmenu a {
-    display: block;
-    padding: 15px 20px;
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-#cssmenu > ul {
+.splash img {
     width:100%;
+    height: 200px;
 }
 
-#cssmenu > ul > li > a {
-    border-right: 4px solid #1b9bff;
-    color: #ffffff;
-}
-#cssmenu > ul > li > a:hover {
-    color: #ffffff;
-}
-#cssmenu > ul > li.active a {
-    background: #1b9bff;
-}
-#cssmenu > ul > li a:hover,
-#cssmenu > ul > li:hover a {
-    background: #1b9bff;
-}
-#cssmenu li {
-    position: relative;
-}
-
-
-#cssmenu.align-right > ul > li > a {
-    border-left: 4px solid #1b9bff;
-    border-right: none;
-}
-#cssmenu.align-right {
-    float: right;
-}
-#cssmenu.align-right li {
-    text-align: right;
+.stream-header {
+    background: #fefefe;
+    border-bottom: 1px solid #dee5e7;
 }
