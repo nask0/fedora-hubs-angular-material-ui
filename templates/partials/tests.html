@@ -86,37 +86,87 @@
 </div>
 
 <div layout="row">
-    <md-content layout="column" flex class="content">
+    <md-content layout="column" flex="75" class="content">
         <md-card>
             <div layout="column" layout-align="left top" class="layout-fill ">
 
-                <md-card-content>
-                    <h3>Stream</h3>
-                    <ul class="cbp_tmtimeline">
-                        <li>
-                            <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>
-                            <div class="cbp_tmicon">
-                                <i class="material-icons">info</i>
-                            </div>
-                            <div class="cbp_tmlabel">
-                                <h2>Ricebean black-eyed pea</h2>
-                                <p>Winter purslane courgette pumpkin </p>
-                            </div>
-                        </li>
-                        <li>
-                            <time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>4/11/13</span> <span>12:04</span></time>
-                            <div class="cbp_tmicon cbp_tmicon-screen">
-                                <i class="material-icons">adjust</i>
-                            </div>
-                            <div class="cbp_tmlabel">
-                                <h2>Greens radish arugula</h2>
-                                <p>
-                                    Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce.
-                                    Celery coriander bitterleaf epazote radicchio shallot winter purslane collard greens spring onion squash lentil.
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
+                <md-card-content style="">
+                    <div class="timeline-sec">
+                        <ul>
+                            <li>
+                                <div class="timeline">
+                                    <div class="user-timeline">
+                                        <span><img src="img/profile-test.jpg" alt=""></span>
+                                    </div>
+
+                                    <div class="timeline-detail">
+                                        <div class="timeline-head">
+                                            <h3>nask0<span>2 min ago</span>
+                                                <i class="red">Admin</i>
+                                            </h3>
+                                            <div class="streambox-controls">
+                                                <a><i class="material-icons">autorenew</i></a>
+                                                <a><i class="material-icons">code</i></a>
+                                                <a><i class="material-icons">done</i></a>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p>Set it as the font <a href="#" title="">John Doe</a> in your applition, and copy and paste the icons. Print this page.</p>
+                                            <md-progress-linear md-mode="determinate" ng-value="50"></md-progress-linear>
+
+                                            <!--<div data-toggle="buttons" class="btn-group btn-group-sm">
+                                                <label class="btn btn-default">
+                                                    <input type="radio" checked="" name="options"><i class="ti-comments"></i> Reply
+                                                </label>
+                                                <label class="btn btn-default">
+                                                    <input type="radio" name="options"> <i class="ti-thumb-up"></i> Like
+                                                </label>
+                                            </div>
+                                            <form class="post-reply">
+                                                <textarea placeholder="Write your comment"></textarea>
+                                                <i class="ti-comments"></i>
+                                            </form>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="timeline">
+                                    <div class="user-timeline">
+                                        <span><img src="img/profile-test.jpg" alt=""></span>
+                                    </div>
+                                    <div class="timeline-detail">
+                                        <div class="timeline-head">
+                                            <h3>John doe<span>2 hours ago</span><i class="purple">Mod</i></h3>
+
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p><a href="#">http</a> build finished - Jonathan Doe builded <a href="#">4 new items</a>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="timeline">
+                                    <div class="user-timeline">
+                                        <span><img src="img/profile-test.jpg" alt=""></span>
+                                    </div>
+                                    <div class="timeline-detail">
+                                        <div class="timeline-head">
+                                            <h3>Test<span>4 min ago</span><i class="green">User</i></h3>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p>Set it as the font <a href="#" title="">John Doe</a> in your applition, and copy and paste the icons. Print this page to PDF for te completet of vectors. Or to use othe the Font Aweo Awesome</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
                 </md-card-content>
 
             </div>
@@ -128,6 +178,12 @@
         </md-card>
     </md-content>
 
-    <!--<md-content flex="50" layout="column" class="content">-->
+
+    <md-content flex="25" layout="column" class="content">
+        <md-card class="green">
+            <md-card-content>
+                Green card
+            </md-card-content>
+        </md-card>
     </md-content>
 </div>

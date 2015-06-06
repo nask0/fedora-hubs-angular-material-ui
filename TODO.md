@@ -6,7 +6,7 @@
 * Stream view / Timeline 
 * * adjust styles
 * * make it dynamic
-
+* Fix icons - choose icons (material, awesome, glyph?), and setup icon pack locally (https://material.angularjs.org/latest/#/api/material.components.icon/service/$mdIconProvider)
 
 ### Research
 Oauth2 login (openId) https://andreareginato.github.io/oauth-ng/
