@@ -16,24 +16,25 @@
 
 <div layout="row">
     <md-content flex="50" layout="column" class="content">
+
         <md-card>
-            <md-toolbar>
-                <!--
+            <!--<md-toolbar>
+                &lt;!&ndash;
                     layout="<align>" is good thing !
                     @todo: Use it in navigation too
                     @todo: This need redesign and image fixes
-                -->
+                &ndash;&gt;
                 <div class="md-toolbar-tools" >
                     <img src="img/fedora_infinity_48x48.png" style="height: 48px; width:48px; margin-right: 10px;" />
-                    <!--<h1>hubs</h1>-->
+                    &lt;!&ndash;<h1>hubs</h1>&ndash;&gt;
                 </div>
-            </md-toolbar>
+            </md-toolbar>-->
 
+            <md-card-content>
             <div id="loginBox" layout="column" layout-align="center center" class="md-padding">
 
-                <md-card-content>
-
                     <h2>Login</h2>
+
                     <div class="row">
                         <md-input-container>
                             <label>Fedora Accounts System username</label>
@@ -45,12 +46,16 @@
                             <input type="password" /> <!-- ng-model="user.password" -->
                         </md-input-container>
 
+                        <!--<md-input-container>
+                            <md-checkbox aria-label="I am 13 years of age or older">
+                                I am 13 years of age or older
+                            </md-checkbox>
+                        </md-input-container>-->
+
                         <button type="submit" class="btn btn-primary btn-sm" style="float:right;">Log me in</button>
                     </div>
-
-                </md-card-content>
-
             </div>
+            </md-card-content>
 
             <md-card-footer>
                 <!--<div class="row">-->
