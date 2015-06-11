@@ -21,15 +21,18 @@ $statsWidget = new JsonMockObj([
     'descr' => 'Hello Universe, i am Stats widget !',
     'enabled' => true,
     'lastSync' => $_ts,
-    'data' => [
-        new JsonMockObj([
+    'data' => new JsonMockObj([
             'stats' => [
                 'members' => mt_rand(100,99999),
                 'followers' => mt_rand(999, 10000),
                 'subscribers' => mt_rand(100,99999)
+            ],
+            'other' => [
+                'one' => 1,
+                'two' => 3
             ]
-        ])
-    ]
+        ]
+    )
 ]);
 
 function dataAsJson( $data, $title, $exit = false ) {
@@ -58,7 +61,7 @@ $widgets = [
         'descr' => 'Hello Universe, i am About widget !',
         'enabled' => true,
         'lastSync' => $_ts,
-        'data' => [new JsonMockObj([])]
+        'data' => new JsonMockObj([])
     ]),
     new JsonMockObj([
         'id' => substr(hash('sha512', 'avatar_widget'), 0, 6),
@@ -67,7 +70,7 @@ $widgets = [
         'descr' => 'Hello Universe, i am Avatar widget !',
         'enabled' => true,
         'lastSync' => $_ts,
-        'data' => [new JsonMockObj([])]
+        'data' => new JsonMockObj([])
     ]),
     new JsonMockObj([
         'id' => substr(hash('sha512', 'badges_widget'), 0, 6),
@@ -76,7 +79,7 @@ $widgets = [
         'descr' => 'Hello Universe, i am Badges widget',
         'enabled' => true,
         'lastSync' => $_ts,
-        'data' => [new JsonMockObj([])]
+        'data' => new JsonMockObj([])
     ]),
     new JsonMockObj([
         'id' => substr(hash('sha512', 'rules_widget'), 0, 6),
@@ -85,7 +88,7 @@ $widgets = [
         'descr' => 'Hello Universe, i am Rules widget',
         'enabled' => true,
         'lastSync' => $_ts,
-        'data' => [new JsonMockObj([])]
+        'data' => new JsonMockObj([])
     ])
 ];
 
