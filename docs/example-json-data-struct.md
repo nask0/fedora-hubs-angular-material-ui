@@ -1,6 +1,11 @@
-# Example JSON data structure proposal for Fedora Hubs / Angular
+# Fedora Hubs / Angular JSON data structure draft
 
-## Example JSON data representation of single widget (example url - https://hubs-api.fp.org/widget/4edce4) :
+Example SON data representation for widgets and hubs
+
+
+## Widgets
+
+### Single widget (example url - https://hubs-api.fp.org/widget/4edce4) :
 ```json
 {
     "id":"4edce4",
@@ -25,7 +30,7 @@
 }
 ```
 
-## Example JSON data representation of collection of widget's available for one hub (example url - https://hubs-api.fp.org/widgets/hub/716f89) :
+### Collection of widget's available for single hub (example url - https://hubs-api.fp.org/widgets/hub/716f89) :
 ```json
 [
     "18c815",
@@ -34,8 +39,12 @@
 ]
 ```
 
-## Example JSON data representation of single hub (example url - https://hubs-api.fp.org/hubs/design) :
---------------------------------------------------
+
+
+## Hubs
+
+### Single hub (example url - https://hubs-api.fp.org/hubs/716f89) :
+
 ```json
 {
     "id":"716f89",
@@ -81,14 +90,13 @@
     ]
 }
 ```
---------------------------------------------------
 
-## Example JSON data representation of collection of available hubs for current user (example url - https://hubs-api.fp.org/hubs) :
---------------------------------------------------
+
+## Collection of available hubs for current user (example url - https://hubs-api.fp.org/hubs) :
+
 ```json
 [
     "716f89",
     "6a35dd"
 ]
 ```
---------------------------------------------------
