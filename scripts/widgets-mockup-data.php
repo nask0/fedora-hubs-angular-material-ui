@@ -6,35 +6,6 @@
 $_timestamp = new DateTime('now', new DateTimeZone('UTC') );
 $_ts = $_timestamp->format('Y-m-d H:i:s');
 
-class JsonMockObj extends ArrayIterator
-{
-    public function __construct( array $data ) { parent::__construct( $data ); }
-    public function __toString() { return json_encode( $this->getArrayCopy() ); }
-    public function toArray() { return $this->getArrayCopy(); }
-    public function toJson() { return json_encode( $this->getArrayCopy() ); }
-}
-
-$statsWidget = new JsonMockObj([
-    'id' => substr(hash('sha512', 'stats_widget'), 0, 6),
-    'url' => 'https://api-hubs.fedoraproject.org/api/widget/stats',
-    'name' => 'Stats widget',
-    'descr' => 'Hello Universe, i am Stats widget !',
-    'enabled' => true,
-    'lastSync' => $_ts,
-    'data' => new JsonMockObj([
-            'stats' => [
-                'members' => mt_rand(100,99999),
-                'followers' => mt_rand(999, 10000),
-                'subscribers' => mt_rand(100,99999)
-            ],
-            'other' => [
-                'one' => 1,
-                'two' => 3
-            ]
-        ]
-    )
-]);
-
 function dataAsJson( $data, $title, $exit = false ) {
     echo "## $title\n";
 
@@ -51,6 +22,37 @@ function dataAsJson( $data, $title, $exit = false ) {
     if (true === $exit)
         exit;
 }
+
+class JsonMockObj extends ArrayIterator
+{
+    public function __construct( array $data ) { parent::__construct( $data ); }
+    public function __toString() { return json_encode( $this->getArrayCopy() ); }
+    public function toArray() { return $this->getArrayCopy(); }
+    public function toJson() { return json_encode( $this->getArrayCopy() ); }
+}
+
+$statsWidget = new JsonMockObj([
+    'id' => substr(hash('sha512', 'stats_widget'), 0, 6),
+    'url' => 'https://api-hubs.fedoraproject.org/api/widget/stats',
+    'name' => 'Stats widget',
+    'descr' => 'Hello Universe, i am Stats widget !',
+    'enabled' => true,
+    'lastSync' => $_ts,
+    'data' => [
+        new JsonMockObj([
+            'stats' => [
+                'some_stat' => mt_rand(100,99999),
+                'some_stat2' => mt_rand(999, 10000),
+                'some_stat3' => mt_rand(100,99999)
+            ],
+            'more_stats' => [
+                'evenMoreStats' => mt_rand(100,99999),
+                'andMoreStats' => mt_rand(100,99999)
+            ]
+        ]
+        )
+    ]
+]);
 
 $widgets = [
     $statsWidget,
@@ -92,6 +94,12 @@ $widgets = [
     ])
 ];
 
+$widgetsCollection = [
+    substr(hash('sha512', 'about_widget'), 0, 6),
+    substr(hash('sha512', 'stats_widget'), 0, 6),
+    substr(hash('sha512', 'avatar_widget'), 0, 6)
+];
+
 //echo json_encode($widgets);
 
 /* Single API response for one hub (e.g. api/hubs/<id> || <name>) */
@@ -101,9 +109,32 @@ $designHubData = new JsonMockObj([
     'descr' => 'Design team hub',
     'splash' => 'img/hub_bg1.png',
     'motd' => 'If you never did, you should. These things are fun and fun is good.',
-    'subscribers' => mt_rand(1,100000),
+    'admins' => [
+        new JsonMockObj([
+            'name' => 'threebean',
+            'avatar' => '<avatar_url>',
+            'profile' => '<profile_url>'
+        ]),
+        new JsonMockObj([
+            'name' => 'mizmo',
+            'avatar' => '<avatar_url>',
+            'profile' => '<profile_url>'
+        ]),
+        new JsonMockObj([
+            'name' => 'tatica',
+            'avatar' => '<avatar_url>',
+            'profile' => '<profile_url>'
+        ]),
+    ],
+    'members' => mt_rand(1,100000),
     'followers' => mt_rand(1,100000),
-    'widgets' => $widgets
+    'subscribers' => mt_rand(1,100000),
+    'widgets' => $widgetsCollection,
+    'settings' => [
+        new JsonMockObj(['theme' => 'fedora-design-blue']),
+        new JsonMockObj(['option' => true]),
+        new JsonMockObj(['deny' => false])
+    ]
 ]);
 
 /* Single API response for one hub (e.g. api/hubs/<id> || <name>) */
@@ -113,9 +144,32 @@ $infraHubData = new JsonMockObj([
     'descr' => 'Infrastructure team hub',
     'splash' => 'img/hub_bg1.png',
     'motd' => 'Lorem lipsum dol sir amet !',
-    'subscribers' => mt_rand(1,100000),
+    'admins' => [
+        new JsonMockObj([
+            'name' => 'threebean',
+            'avatar' => '<avatar_url>',
+            'profile' => '<profile_url>'
+        ]),
+        new JsonMockObj([
+            'name' => 'mizmo',
+            'avatar' => '<avatar_url>',
+            'profile' => '<profile_url>'
+        ]),
+        new JsonMockObj([
+            'name' => 'tatica',
+            'avatar' => '<avatar_url>',
+            'profile' => '<profile_url>'
+        ]),
+    ],
+    'members' => mt_rand(1,100000),
     'followers' => mt_rand(1,100000),
-    'widgets' => $widgets
+    'subscribers' => mt_rand(1,100000),
+    'widgets' => $widgetsCollection,
+    'settings' => [
+            new JsonMockObj(['theme' => 'fedora-blue']),
+            new JsonMockObj(['option' => true]),
+            new JsonMockObj(['deny' => false])
+    ]
 ]);
 
 
@@ -133,9 +187,9 @@ $availableHubs = new JsonMockObj([
 
 dataAsJson($statsWidget, 'Example JSON data representation of single widget (example url - https://hubs-api.fp.org/widget/4edce4) :');
 
-dataAsJson($widgets, 'Example JSON data representation of collection of widget\'s available for one hub (example url - https://hubs-api.fp.org/widgets/hub/716f89) :');
+dataAsJson($widgetsCollection, 'Example JSON data representation of collection of widget\'s available for one hub (example url - https://hubs-api.fp.org/widgets/hub/716f89) :');
 
-dataAsJson($designHubData, 'Example JSON data representation of one hub (example url - https://hubs-api.fp.org/hubs/design) :');
+dataAsJson($designHubData, 'Example JSON data representation of single hub (example url - https://hubs-api.fp.org/hubs/design) :');
 
 dataAsJson($availableHubs, 'Example JSON data representation of collection of available hubs (example url - https://hubs-api.fp.org/hubs) :');
 
