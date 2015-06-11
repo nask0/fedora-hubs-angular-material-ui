@@ -3,44 +3,6 @@
 Example SON data representation for widgets and hubs
 
 
-## Widgets
-
-### Single widget (example url - https://hubs-api.fp.org/widget/4edce4) :
-```json
-{
-    "id":"4edce4",
-    "url":"https:\/\/api-hubs.fedoraproject.org\/api\/widget\/stats",
-    "name":"Stats widget",
-    "descr":"Hello Universe, i am Stats widget !",
-    "enabled":true,
-    "lastSync":"2015-06-11 20:44:26",
-    "data":[
-        {
-            "stats":{
-                "some_stat":89980,
-                "some_stat2":6199,
-                "some_stat3":68941
-            },
-            "more_stats":{
-                "evenMoreStats":72454,
-                "andMoreStats":41128
-            }
-        }
-    ]
-}
-```
-
-### Collection of widget's available for single hub (example url - https://hubs-api.fp.org/widgets/hub/716f89) :
-```json
-[
-    "18c815",
-    "4edce4",
-    "925ee2"
-]
-```
-
-
-
 ## Hubs
 
 ### Single hub (example url - https://hubs-api.fp.org/hubs/716f89) :
@@ -98,5 +60,43 @@ Example SON data representation for widgets and hubs
 [
     "716f89",
     "6a35dd"
+]
+```
+
+
+
+## Widgets
+
+### Single widget (example url - https://hubs-api.fp.org/widget/4edce4) :
+```json
+{
+    "id":"4edce4",
+    "url":"https:\/\/api-hubs.fedoraproject.org\/api\/widget\/stats",
+    "name":"Stats widget",
+    "descr":"Hello Universe, i am Stats widget !",
+    "enabled":true,
+    "lastSync":"2015-06-11 20:44:26",
+    "data":[
+        {
+            "stats":{
+                "some_stat":89980,
+                "some_stat2":6199,
+                "some_stat3":68941
+            },
+            "more_stats":{
+                "evenMoreStats":72454,
+                "andMoreStats":41128
+            }
+        }
+    ]
+}
+```
+
+### Collection of widget's available for single hub (example url - https://hubs-api.fp.org/widgets/hub/716f89) :
+```json
+[
+    "18c815",
+    "4edce4",
+    "925ee2"
 ]
 ```
