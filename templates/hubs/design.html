@@ -1,0 +1,189 @@
+<div layout="column" layout-padding>
+    <!-- @todo: submenu goes here -->
+</div>
+
+<div layout="column">
+
+    <div class="splash">
+        <div style="border-top:1px solid #fcfcfc; background:url('img/hub_bg1.png') center center; background-size:cover;">
+
+            <div layout="row" layout-align="space-between center" style="background-color: rgba(0,0,0,0.2); padding-left:30px; padding-right: 30px; padding-top:30px; padding-bottom:10px;">
+                <div style="color:#fff; font-size:1.5em;">
+                    Design team
+                </div>
+                <div>
+                    <a class="btn btn-sm btn-success btn-rounded">
+                        <span>Follow</span> (8612)
+                    </a>
+                    <a class="btn btn-sm btn-info btn-rounded">
+                        Subscribe ({{ hubStats.subscribers }})
+                    </a>
+                </div>
+            </div>
+
+            <div layout="row" layout-align="space-between center" style="background-color: rgba(0,0,0,0.2); padding-left:30px; padding-right: 30px; padding-bottom: 10px;">
+                <div style="color:#fff; font-size:1em;">
+                    “If you never did, you should. These things are fun and fun is good.”
+                </div>
+
+                <div>
+                    <a href="#/design" class="" style="color:#2196f3;">
+                        + Join hub ({{ hubStats.members }})
+                    </a>
+                </div>
+
+            </div>
+
+            <div layout="row" layout-align="space-between center" style="background-color: rgba(0,0,0,0.2); padding-left:20px; padding-right: 30px; padding-bottom: 30px; color:#fff;">
+                <md-button>
+                    <md-icon md-svg-src="img/icons/ic_file_upload_black_24px.svg" alt="file_upload"></md-icon>
+                    update splash
+                </md-button>
+            </div>
+        </div>
+    </div>
+
+    <div class="stream-header">
+        <md-tabs>
+            <md-tab label="Stream"></md-tab>
+            <md-tab label="Members"></md-tab>
+            <md-tab label="Stats"></md-tab>
+            <md-tab label="settings"></md-tab>
+        </md-tabs>
+    </div>
+</div>
+
+<div layout="row">
+    <!--<md-content layout="column" flex class="content">
+        <md-card>
+            <div layout="column" layout-align="left top" class="layout-fill ">
+
+                <md-card-content>
+                    <h2>Alerts</h2>
+
+                    <md-grid-list md-cols="8" md-gutter="1em" md-row-height="4:3">
+                        <md-grid-tile>
+                            <a href="#" ng-click="showAlert()" class="md-raised">SHOW ALERT</a>
+                        </md-grid-tile>
+                        <md-grid-tile>
+                            <a href="#" ng-click="showDialog($event)" class="md-raised">CUSTOM</a>
+                        </md-grid-tile>
+                    </md-grid-list>
+
+                </md-card-content>
+
+            </div>
+
+            <md-card-footer>
+                CARD FOOTER
+            </md-card-footer>
+
+        </md-card>
+    </md-content>-->
+
+    <!--<md-content flex="50" layout="column" class="content">
+    </md-content>-->
+</div>
+
+<div layout="row">
+    <md-content layout="column" flex="75" class="content">
+        <md-card>
+            <div layout="column" layout-align="left top" class="layout-fill ">
+
+                <md-card-content style="">
+                    <div class="timeline-sec">
+                        <ul>
+                            <li>
+                                <div class="timeline">
+                                    <div class="user-timeline">
+                                        <span><img src="img/profile-test.jpg" alt=""></span>
+                                    </div>
+
+                                    <div class="timeline-detail">
+                                        <div class="timeline-head">
+                                            <h3>nask0<span>2 min ago</span>
+                                                <i class="red">Admin</i>
+                                            </h3>
+                                            <div class="streambox-controls">
+                                                <a><i class="material-icons">autorenew</i></a>
+                                                <a><i class="material-icons">code</i></a>
+                                                <a><i class="material-icons">done</i></a>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p>Set it as the font <a href="#" title="">John Doe</a> in your applition, and copy and paste the icons. Print this page.</p>
+                                            <md-progress-linear md-mode="determinate" ng-value="50"></md-progress-linear>
+
+                                            <!--<div data-toggle="buttons" class="btn-group btn-group-sm">
+                                                <label class="btn btn-default">
+                                                    <input type="radio" checked="" name="options"><i class="ti-comments"></i> Reply
+                                                </label>
+                                                <label class="btn btn-default">
+                                                    <input type="radio" name="options"> <i class="ti-thumb-up"></i> Like
+                                                </label>
+                                            </div>
+                                            <form class="post-reply">
+                                                <textarea placeholder="Write your comment"></textarea>
+                                                <i class="ti-comments"></i>
+                                            </form>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="timeline">
+                                    <div class="user-timeline">
+                                        <span><img src="img/profile-test.jpg" alt=""></span>
+                                    </div>
+                                    <div class="timeline-detail">
+                                        <div class="timeline-head">
+                                            <h3>John doe<span>2 hours ago</span><i class="purple">Mod</i></h3>
+
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p><a href="#">http</a> build finished - Jonathan Doe builded <a href="#">4 new items</a>.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="timeline">
+                                    <div class="user-timeline">
+                                        <span><img src="img/profile-test.jpg" alt=""></span>
+                                    </div>
+                                    <div class="timeline-detail">
+                                        <div class="timeline-head">
+                                            <h3>Test<span>4 min ago</span><i class="green">User</i></h3>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <p>Set it as the font <a href="#" title="">John Doe</a> in your applition, and copy and paste the icons. Print this page to PDF for te completet of vectors. Or to use othe the Font Aweo Awesome</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </md-card-content>
+
+            </div>
+
+            <md-card-footer>
+                <a href="#/design">Load more</a>
+            </md-card-footer>
+
+        </md-card>
+    </md-content>
+
+
+    <md-content flex="25" layout="column" class="content">
+        <md-card class="green">
+            <md-card-content>
+                Green card
+            </md-card-content>
+        </md-card>
+    </md-content>
+</div>

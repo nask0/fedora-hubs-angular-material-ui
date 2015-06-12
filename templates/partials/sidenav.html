@@ -7,14 +7,27 @@
         </div>
     </div>
 
-    <div ng-if="debug" id='cssmenu'>
-        <ul>
-            <li><a href='#'><span>Home</span></a></li>
-            <li class='active '><a href='#'><span>Products</span></a>
+    <div ng-if="true" class="main_menu">
+        <md-list>
+          <md-list-item class="md-2-line">
+              <div class="md-list-item-text">
+                  <h3>
+                      <a href="/" ui-sref="index">
+                          My Dashboard (Home)
+                      </a>
+                  </h3>
+              </div>
+          </md-list-item>
 
-            </li>
-            <li><a href='#'><span>About</span></a></li>
-            <li class='last'><a href='#'><span>Contact</span></a></li>
-        </ul>
+          <md-list-item class="md-2-line" ng-repeat="hub in currentUser.hubs">
+            <div class="md-list-item-text">
+                <h3>
+                    <a href="{{ hub.key }}" ui-sref="hub({ hubKey: '{{ hub.key }}' })">
+                        {{ hub.key .charAt(0).toUpperCase() + hub.key.slice(1) }}
+                    </a>
+                </h3>
+            </div>
+          </md-list-item>
+        </md-list>
     </div>
 </nav>

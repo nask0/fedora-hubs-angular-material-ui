@@ -14,6 +14,17 @@
  * @see: https://docs.angularjs.org/guide/module
  */
 angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
+// @todo: this config *must* come from server side script!
+.constant('hubsAppConfig', {
+        ver: '0.1a',
+        apiUrls: {
+            user: 'fake-api.php?route=user',
+            userGuest: 'fake-api.php?route=user&sub_route=guest',
+            hubs: 'fake-api.php?route=hubs',
+            widgets: 'fake-api.php?route=widgets'
+        }
+    }
+)
 /**
  * Configuration block.
  * Get executed during the provider registrations and configuration phase. 
@@ -40,10 +51,7 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
             .state('index', {
                 url: "/",
                 views: {
-                    'navigation': {
-                        /*controller: 'NavigationController',*/
-                        templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html'
-                    },
+                    'navigation': { templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html' },
                     'sidenav': {
                         controller: 'SidenavController',
                         templateUrl: window.appConfig.baseUrl + 'templates/partials/sidenav.html'
@@ -57,16 +65,35 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
             .state('design', {
                 url: '/design',
                 views: {
-                    'navigation': {
-                        templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html'
-                    },
+                    'navigation': { templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html' },
                     'sidenav': {
                         controller: 'SidenavController',
                         templateUrl: window.appConfig.baseUrl + 'templates/partials/sidenav.html'
                     },
                     'content': {
-                        controller: 'TestsController',
-                        templateUrl: window.appConfig.baseUrl + 'templates/partials/tests.html'
+                        controller: 'DesignController',
+                        templateUrl: window.appConfig.baseUrl + 'templates/hubs/design.html'
+                    }
+                }
+            })
+            .state('hub', {
+                url: '/hub/:hubKey',
+                resolve: {
+                    hubResolver:
+                        function(HubsService, $stateParams) {
+                            console.log('AAAAAAAAAAAAA',$stateParams.hubKey);
+                            return HubsService.getHub( $stateParams.hubKey );
+                        }
+                },
+                views: {
+                    'navigation': { templateUrl: window.appConfig.baseUrl + 'templates/partials/navigation.html' },
+                    'sidenav': {
+                        controller: 'SidenavController',
+                        templateUrl: window.appConfig.baseUrl + 'templates/partials/sidenav.html'
+                    },
+                    'content': {
+                        controller: 'HubController',
+                        templateUrl: window.appConfig.baseUrl + 'templates/hubs/hub.html'
                     }
                 }
             });
@@ -121,7 +148,20 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
 .run(['$rootScope', '$location', '$log', 'userService',
     function($rootScope, $location, $log, userService) {
         // load session user fake data
-        $rootScope.currentUser = {};
+        $rootScope.currentUser = false;
+
+        // @todo: move this code into userService
+        if ( !$rootScope.currentUser ) {
+            userService.getUserFakeData().then(
+                // (http) success handler callback
+                function(userData) {
+                    $rootScope.currentUser = userData;
+                    console.log($rootScope.currentUser );
+                },
+                // (http) error handler callback
+                function() { $rootScope.currentUser = false; }
+            );
+        }
 
         $rootScope.chatToggled = false;
         $rootScope.toggleChat = function() {

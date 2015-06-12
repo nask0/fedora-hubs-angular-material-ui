@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('fedoraHubs')
-    .controller('TestsController', ['$scope', '$rootScope', '$timeout', '$http', '$mdDialog', 'DemoHubs',
-        function( $scope, $rootScope, $timeout, $http, $mdDialog, DemoHubs ) {
+    .controller('TestsController', ['$scope', '$rootScope', '$timeout', '$http', '$mdDialog',
+        function( $scope, $rootScope, $timeout, $http, $mdDialog ) {
             var alert;
             $scope.myItems = [, 2, 3];
             $scope.showAlert = showAlert;
@@ -10,16 +10,6 @@ angular.module('fedoraHubs')
             $scope.items = ["one", "two", "three"];
 
             $scope.hubStats = {};
-            DemoHubs.getWidget( 1 ).then(
-                function( data ) {
-                    console.log('Response data:', data);
-                    $scope.hubStats = data;
-                },
-                function( error, httpStatus ) {
-                    console.log(error, httpStatus);
-                    $scope.hubStats = {};
-                }
-            );
 
             // Internal method
             function showAlert() {

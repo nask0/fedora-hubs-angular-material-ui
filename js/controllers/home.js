@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('fedoraHubs')
-.controller('HomeController', ['$scope', '$rootScope', '$timeout', '$http', 'DemoHubs',
-    function( $scope, $rootScope, $timeout, $http, DemoHubs ) {
+.controller('HomeController', ['$scope', '$rootScope', '$timeout', '$http',
+    function( $scope, $rootScope, $timeout, $http ) {
         // $scope.openLeftMenu = function() { $mdSidenav('left').toggle(); };
 
         $scope.tabError = false;
@@ -24,7 +24,7 @@ angular.module('fedoraHubs')
         $scope.loadWidgetData  = function( widget ) {
             $scope.tabContent = false;
             $scope.tabLoading = true;
-            DemoHubs.getWidget( widget ).then(
+            /*DemoHubs.getWidget( widget ).then(
                 function( data ) {
                     $timeout(function() {
                         console.log('Response data:', data);
@@ -38,7 +38,7 @@ angular.module('fedoraHubs')
                     console.log(error);
                     $scope.tabLoading = false;
                 }
-            );
+            );*/
         };
 
         if ( !$scope.tabContent ) {

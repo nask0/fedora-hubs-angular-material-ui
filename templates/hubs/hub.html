@@ -1,0 +1,76 @@
+<div ng-cloak="hub">
+    <div layout="column" layout-padding>
+        <!-- @todo: submenu goes here -->
+    </div>
+
+    <div layout="column">
+
+        <!-- BEGIN HUB HEADER -->
+        <div class="splash" hub-splash="{{ hub.splash }}">
+
+                <div layout="row" layout-align="space-between center" style="background-color: rgba(0,0,0,0.2); padding-left:30px; padding-right: 30px; padding-top:30px; padding-bottom:10px;">
+                    <div style="color:#fff; font-size:1.5em;">
+                        {{hub.name}}
+                    </div>
+                    <div>
+                        <a class="btn btn-sm btn-success btn-rounded">
+                            <span>Follow</span> ({{ hub.followers}})
+                        </a>
+                        <a class="btn btn-sm btn-info btn-rounded">
+                            Subscribe ({{ hub.subscribers }})
+                        </a>
+                    </div>
+                </div>
+
+                <div layout="row" layout-align="space-between center" style="background-color: rgba(0,0,0,0.2); padding-left:30px; padding-right: 30px; padding-bottom: 10px;">
+                    <div style="color:#fff; font-size:1em;">
+                        "{{ hub.motd }}"
+                    </div>
+
+                    <div>
+                        <a href="#/design" class="" style="color:#2196f3;">
+                            + Join hub ({{ hub.members }})
+                        </a>
+                    </div>
+
+                </div>
+
+                <div layout="row" layout-align="space-between center" style="background-color: rgba(0,0,0,0.2); padding-left:20px; padding-right: 30px; padding-bottom: 30px; color:#fff;">
+                    <md-button>
+                        <md-icon md-svg-src="img/icons/ic_file_upload_black_24px.svg" alt="file_upload"></md-icon>
+                        update splash
+                    </md-button>
+                </div>
+            </div>
+        </div>
+        <!-- END HUB HEADER -->
+
+        <!-- BEGIN HUB TABS -->
+        <div class="stream-header">
+            <md-tabs>
+                <md-tab label="Dashboard"></md-tab>
+                <md-tab label="settings"></md-tab>
+            </md-tabs>
+        </div>
+        <!-- END HUB TABS -->
+    </div>
+
+    <div layout="row">
+        <!--
+            BEGIN WIDGETS CONTENT:
+            --
+                for each (widgets)
+                    <display template>
+                end
+            --
+        -->
+        <md-content flex layout="column" class="content">
+            <md-card class="green">
+                <md-card-content>
+                    Hello Widgets !
+                </md-card-content>
+            </md-card>
+        </md-content>
+        <!-- END WIDGETS CONTENT -->
+    </div>
+</div>
