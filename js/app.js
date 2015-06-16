@@ -17,11 +17,13 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
 // @todo: this config *must* come from server side script!
 .constant('hubsAppConfig', {
         ver: '0.1a',
-        apiUrls: {
-            user: 'fake-api.php?route=user',
-            userGuest: 'fake-api.php?route=user&sub_route=guest',
-            hubs: 'fake-api.php?route=hubs',
-            widgets: 'fake-api.php?route=widgets'
+        api: {
+            urls: {
+                user: 'fake-api.php?route=user',
+                userGuest: 'fake-api.php?route=user&sub_route=guest',
+                hubs: 'fake-api.php?route=hubs',
+                widgets: 'fake-api.php?route=widgets'
+            }
         }
     }
 )
@@ -81,8 +83,7 @@ angular.module('fedoraHubs', ['ui.router', 'ngMaterial'])
                 resolve: {
                     hubResolver:
                         function(HubsService, $stateParams) {
-                            console.log('AAAAAAAAAAAAA',$stateParams.hubKey);
-                            return HubsService.getHub( $stateParams.hubKey );
+                            return HubsService.getHub( $stateParams.hubKey);
                         }
                 },
                 views: {

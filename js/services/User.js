@@ -18,7 +18,7 @@ angular.module('fedoraHubs')
             var deferred = $q.defer();
 
             // do checks and whatever other configuration needed before make request here
-            $http.get(hubsAppConfig.apiUrls.user).then(
+            $http.get(hubsAppConfig.api.urls.user).then(
                 function(response) {
                     deferred .resolve(response.data);
                 },
@@ -33,7 +33,7 @@ angular.module('fedoraHubs')
         }
 
         userService .getGuestUserFakeData = function () {
-            return $http.get(hubsAppConfig.apiUrls.userGuest);
+            return $http.get(hubsAppConfig.api.urls.userGuest);
         }
 
         return userService;

@@ -12,7 +12,7 @@ angular.module('fedoraHubs')
 
                 // do checks and whatever other configuration needed before make request here
                 $http({
-                    url: hubsAppConfig.apiUrls.widgets,
+                    url: hubsAppConfig.api.urls.widgets,
                     method: 'GET',
                     params: {
                         id: hubId
