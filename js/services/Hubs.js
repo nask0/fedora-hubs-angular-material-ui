@@ -22,8 +22,7 @@ angular.module('fedoraHubs')
                         deferred .resolve(response.data);
                     },
                     function(errorResponse) {
-                        // console.log('Error occured while trying to get hubs fake data', errorResponse);
-                        // handle error response
+                        // @todo: handle error response
                         deferred .reject(false);
                     }
                 );
