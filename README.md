@@ -1,3 +1,7 @@
+## Obsolated
+---
+This repository is obsoleted. For one or other reason, this project has no sign that it will be used in the Fedora Hubs project so i don't work on this anymore.
+
 ## Preface
 ---
 This repository contains draft proposals for improvements of existing Fedora websites and / or creating of new ones. It was inspired by Fedora Foundations (especially: First - innovation), rewriting of FAS (FAS_3.0), proposal of creating Fedora developers portal (http://developer.fedoraproject.org/) and other complaints from  websites mailing list.
